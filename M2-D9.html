@@ -18,28 +18,166 @@ Make sure you check the documentation before creting anything custom.
 <html>
   <head>
     <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
     <style>
-      /* PREVIOUS CODE */
+        /* PREVIOUS CODE */
+        body {
+            background-color: black;
+        }
+        h5 {
+        margin-top: 18px;
+        margin-bottom: 18px
+        }
+        ul.breadcrumb {
+            background-color: black;
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
+        }
+        button:hover {
+            opacity: 0.75;
+        }
+        a {
+            color: gray;
+        }
     </style>
+    <title>My Albums</title>
+
   </head>
+
   <body>
-    <!-- EXERCISE 1
+
+    <nav class="navbar navbar-expand-lg navbar-dark px-0">
+        <div class="container-fluid">
+         
+            <a class="navbar-brand" href="#">My Albums</a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               
+        <!-- EXERCISE 1
         Use the specific bootstrap components to implement a Breadcrumb
-    -->
+        -->
+            <nav aria-label="breadcrumb">
+                <ul class="navbar-nav mr-auto breadcrumb ">
+                    <li class="nav-item breadcrumb-item"><a class="nav-link" href="#favorites">Favorites</a></li>
+                    <li class="nav-item breadcrumb-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item breadcrumb-item"><a class="nav-link" href="#worst">Worst</a></li>
+                    <li class="nav-item breadcrumb-item"><a class="nav-link" href="#musicians">Musicians</a></li>
+                    <li class="nav-item breadcrumb-item"><a class="nav-link" href="#pictures">Pictures</a></li>
+                    <li class="nav-item breadcrumb-item active" aria-current="page">
+                        <a class="nav-link" href="#albumdetails">Album details</a></li>
+                </ul>
+            </nav>
+            
+          
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+        </div>
+    </nav>
+
 
     <!-- EXERCISE 2
         Create a Jumbotron section with a quick explanation / image of the website
     -->
+    <div class="container">
+        <div class="jumbotron">
+            <h4 class="display-4">My Albums Website</h4>
+            <p class="lead">Browse the Favorites and Reviews sections</p>
+            <hr class="my-4">
+            <p>Pictures and Album details</p>
+            <a class="btn btn-secondary btn-lg" href="#" role="button">Learn more</a>
+          </div>
+    </div>
+
 
     <!-- EXERCISE 3
         Foreach album in the favorite list, place the genre inside a badge
     -->
-
     <!-- EXERCISE 4
         Foreach album in the favorite list, use the Bootstrap Card to contain it.
         Use card layouts to format it in the best way possible.
     -->
+
+    <div id="favorites" class="container mb-5"> 
+        <h5 class="text-light">FAVORITE ALBUMS</h5>
+          <div class="row row-cols-4">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              1
+              <div class="card" class="card bg-light text-dark">
+                <img class="card-img-top" src="img/howtobeabetterhuman.jpg" alt="" width="148px">
+                  <div class="card-body">
+                    <h5 class="card-title">How to be better human</h5>
+                    <h6 class="card-subtitle mb-2">TED and PRX</h6>
+                    <span class="badge badge-secondary">Podcast</span>
+                    <p class="card-text">
+                      sharp insights and clear takeaways on how YOU can be a better human                      </p>
+                    <a href="#albumdetails" class="btn btn-primary">Album details</a>
+                  </div>
+
+              </div>            
+           </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              2
+                <div class="card" class="card bg-light text-dark">
+                  <img class="card-img-top" src="img/making_sense.png" alt="" width="148px">
+                    <div class="card-body">
+                      <h5 class="card-title">Making sense</h5>
+                      <h6 class="card-subtitle mb-2">Sam Harris</h6>
+                      <span class="badge badge-secondary">Podcast</span>
+                      <p class="card-text">
+                        important and controversial questions about the human mind, society
+                        </p>
+                      <a href="#albumdetails" class="btn btn-primary">Album details</a>
+                      
+                    </div>
+
+                </div>      
+            </div>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+              3
+              <div class="card" class="card bg-light text-dark">
+                <img class="card-img-top" src="img/meditationfortheday.jpg" alt="" width="148px">
+                  <div class="card-body">
+                    <h5 class="card-title">Meditations for the day</h5>
+                    <h6 class="card-subtitle mb-2">Wondery</h6>
+                    <span class="badge badge-secondary">Podcast</span>
+                    <p class="card-text">
+                      designed to help you feel better at every time of the day
+                    </p>
+                    <a href="#albumdetails" class="btn btn-primary">Album details</a>
+                  </div>
+                  
+              </div>  
+              </div>    
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+             4
+             <div class="card" class="card bg-light text-dark">
+              <img class="card-img-top" src="img/theartofbeingwell.jpg" alt="" width="148px">
+                <div class="card-body">
+                  <h5 class="card-title">The art of being well</h5>
+                  <h6 class="card-subtitle mb-2">Dear Media, Will Cole</h6>
+                  <span class="badge badge-secondary">Podcast</span>
+                  <p class="card-text">
+                    fresh infusion of grace and lightness into wellness
+                  </p>
+                  <a href="#albumdetails" class="btn btn-primary">Album details</a>
+                </div>
+            </div>      
+            </div>            
+          </div>
+        </div>
+
 
     <!-- EXERCISE 5
         Place the tracklist inside a Bootstrap table.
@@ -47,11 +185,52 @@ Make sure you check the documentation before creting anything custom.
         Use a column for the track order number, one for the title and one for the track duration.
         (If you want, you can also add extra columns)
     -->
-
+    
     <!-- EXERCISE 6
-        Add a DELETE bootstrap button on each row of the tracklist, with appropriate transitions on the various pseudo-class states 
+        Add a DELETE bootstrap button on each row of the tracklist, with appropriate transitions 
+        on the various pseudo-class states 
         which you should also do for all the subsequent buttons you'll create.
     -->
+    <div class="container">
+        <h5 class="text-light">TRACKLIST</h5>
+
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-sm table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Order no.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Track duration</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-warning">
+                        <th scope="row">1</th>
+                        <td>How to be better human</td>
+                        <td>3:00</td>
+                        <td><button type="button" class="btn btn-secondary">DELETE</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Making sense</td>
+                        <td>2:30</td>
+                        <td><button type="button" class="btn btn-secondary">DELETE</button></td>
+                      </tr>
+                      <tr class="bg-danger">
+                        <th scope="row">3</th>
+                        <td>Meditations for the day</td>
+                        <td>2:00</td>
+                        <td><button type="button" class="btn btn-secondary">DELETE</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+
+        
 
     <!-- EXERCISE 7
         Add a "Contact Me" form in the footer.
@@ -60,10 +239,65 @@ Make sure you check the documentation before creting anything custom.
         - Text of the message
         Use the correct Bootstrap styles for styling the buttons
     -->
-
-    <!-- EXERCISE 8 
+        <!-- EXERCISE 8 
         Add to the footer an extra column with the same links of the top nav.
     -->
+
+    <div class="container">
+        <div class="d-flex justify-content-around">
+            <h5 class="text-light">Contact Me</h5>
+            <h5 class="text-light">LINKS</h5>
+        </div>
+        
+        <div>
+            <div class="row">
+                <div class="col-5">
+                <form>
+                    <div class="form-group text-white">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <small id="emailHelp" class="form-text ">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group text-white">
+                        <label for="exampleFormControlTextarea1">Your message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    
+                <button type="submit" class="btn btn-secondary">Submit</button>
+              </form>
+              </div>
+    
+              <div class="col-7 d-flex justify-content-end">
+    
+                <div class="card text-center bg-transparent" style="width: 28rem;">
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a class="nav-link" href="#favorites">Favorites</a></li>
+                                <li class="list-group-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                                <li class="list-group-item"><a class="nav-link" href="#worst">Worst</a></li>
+                                </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><a class="nav-link" href="#musicians">Musicians</a></li>
+                      <li class="list-group-item"><a class="nav-link" href="#pictures">Pictures</a></li>
+                      <li class="list-group-item"><a class="nav-link" href="#albumdetails">Album details</a></li>
+                    </ul>
+                    </div>
+                  </div>
+    
+              </div>
+    
+              </div>
+        </div>
+
+        </div>
+    </div>
+        
+
+
 
     <!-- EXERCISE 9
         Add a button "Add Track" under the track list of the album. Add also a nice shadow transition when the button is hovered (with the box-shadow property)
@@ -123,5 +357,14 @@ Make sure you check the documentation before creting anything custom.
         Add the functionality that will make the row disappear when you click on its delete button. 
         Add a fade-out effect to it before it gets removed, using a CSS transition effect
     -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+
   </body>
 </html>
