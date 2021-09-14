@@ -1,0 +1,259 @@
+.background-color-black {
+    background-color: black
+} 
+
+        /* NAVBAR */
+
+/* .breadcrumb-item+.breadcrumb-item::before {
+    content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPjxwYXRoIGQ9Ik0yLjUgMEwxIDEuNSAzLjUgNCAxIDYuNSAyLjUgOGw0LTQtNC00eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+);
+} */
+/* 
+  #navbarToggler > span.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+  } */
+
+li.nav-item.active a.nav-link {
+    color: #00a8e1!important;
+}
+
+/* li.nav-item:active {
+  color: #1AD2FB!important;
+} */
+
+li.nav-item > a.nav-link:hover,
+li.nav-item.active > a.nav-link:hover {
+    color:#1AD2FB!important;
+}
+
+ul.breadcrumb {
+    background-color: black;
+}
+
+form > button.btn-info:hover {
+    background-color:#1AD2FB!important;
+    transform:scale(1.1);
+    
+} 
+
+button:hover {
+    opacity: 0.75;
+}
+
+a {
+    color: gray;
+}
+
+        /* JUMBOTRON */
+
+div.jumbotron {
+    color: white;
+    background: rgb(8,139,158);
+    background: linear-gradient(0deg, rgba(8,139,158,1) 0%, rgba(11,11,11,1) 29%);
+}
+
+        /* MAIN */
+
+main {
+    margin-left: 3rem
+  }
+
+  h5 {
+    margin-top: 18px;
+    margin-bottom: 18px
+  }
+
+        /* FAVORITES */
+
+h5 {
+    margin-top: 18px;
+    margin-bottom: 18px
+    }        
+
+  p.song-author {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+
+  }
+
+  h6.song-title {
+    color: white;
+
+  }
+
+  img.img-style {
+    height: 10rem;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+
+  img:hover {
+    filter: drop-shadow(0px 0px 10px rgba(27, 27, 27, 0.71));
+    opacity: 0.7
+  }
+
+  #carouselExampleControls > div > div:nth-child(2) > div > div {
+      position: relative;
+
+  }
+
+  span.badge {
+      position:absolute;
+      top: 1rem;
+  }
+
+          /* REVIEW */
+
+  .tracklistfont {
+    font-size: 11px;
+  }
+
+  .albuminfo {
+    font-size: 12px;
+  }
+
+          /* WORST */
+
+  #worst > div > div > div > img {
+    border-radius: 10px;
+    width: 150px
+  }
+
+  .worsttitles {
+    font-size: 10px;
+  }
+
+          /* TRACKLIST */
+
+th, td {
+    font-size: 0.8rem;
+}          
+
+body > main > div:nth-child(4) > div > div > table > tbody > tr > td > button {
+    font-size: 0.7rem;
+}
+
+table:hover {
+    opacity: 0.9;
+}
+
+body > main > div:nth-child(4) > div > div > table > tbody > tr:nth-child(1) > td.d-flex.align-items-center {
+    border-top: 0px;
+}
+
+#btnTrack:hover {
+    filter: drop-shadow(0px 0px 10px rgba(73, 73, 73, 0.71));
+    opacity: 0.7
+}
+
+#exampleModal1 > div.modal-dialog,
+#exampleModal1 > div > div.modal-content {
+    background-color: #DC3545;
+}
+
+/* table {
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+} */
+
+/* body > main > div:nth-child(4) > div > div > table > tbody > tr:nth-child(3) > th {
+    border-bottom-left-radius: 1rem;   
+}
+
+body > main > div:nth-child(4) > div > div > table > tbody > tr:nth-child(3) > td:nth-child(3) {
+    border-bottom-right-radius: 1rem;  
+} */
+          
+        /* FOOTER */
+
+  a > svg {
+    color:white;   
+    text-decoration: none;    
+  }
+
+  a > svg:hover {
+    text-decoration: none;
+    opacity: 0.7;
+  }
+
+  #exampleModal > div.modal-dialog,
+  #exampleModal > div > div.modal-content {
+      background-color: teal
+  }
+
+  
+        /* OVERLAY */
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+    animation-name: fadeIn;
+    animation-duration: 2s;
+  }
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }  
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+ } 
+
+.fadeintransition {
+  animation: fade-in 1s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1; 
+  }
+}
+
+.alert-message {
+  position: fixed;
+  bottom: 3em;
+  left: 3em;
+  width: 30%;
+  animation: slide-in 1s forwards;
+  z-index: 10;
+}
+
+@keyframes slide-in {
+  0% { 
+      opacity: 0; 
+      transform: translateX(-100%)
+  
+  }
+  100% { 
+      opacity: 1; 
+      transform: translateX(0%)
+  }
+}
+
+.transitionremoving {
+  animation: fade-out 1s forwards;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} 

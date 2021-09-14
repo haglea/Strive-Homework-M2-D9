@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<!--
+IMPORTANT:
+Start from the previous Musical assignment project you've created on M2-D2
+    
+ASSIGNMENT RULES
+- The project must be pushed to a new repository and linked in EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided and documentation.
+- To test the page, open it with your browser and inspect it with developer tools / device emulator.
+- Use Bootstrap4.6 classes to create the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+
+NOTE:
+Most of the requirements in this exercises reference a bootstrap's functionality or component. 
+Make sure you check the documentation before creting anything custom.
+-->
+
+<html>
+  <head>
+    <!-- IMPORT ALL THE BOOSTRAP RELATED CSS & SCRIPTS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" />  
+
+    <title>My Albums</title>
+
+  </head>
+
+  <body class="background-color-black">
+
+            <!-- NAVBAR  -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark background-color-black text-white">
+      <div class="container">
+
+        <div class="navbar-header">
+          <a class="navbar-brand text-white" href="#">My Albums</a>
+        </div>
+        <button id="navbarToggler" class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+
+        <div class="collapse navbar-collapse d-flex align-items-center" id="navbarSupportedContent">
+                  <!-- EXERCISE 1
+        Use the specific bootstrap components to implement a Breadcrumb
+        -->
+        <nav aria-label="breadcrumb ">
+          <ul class="navbar-nav mr-auto breadcrumb pb-0 mt-1">            
+              <li class="nav-item breadcrumb-item d-flex align-items-center "><a class="nav-link" href="#favorites">Favorites</a></li>
+              <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#reviews">Reviews</a></li>
+              <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#worst">Worst</a></li>
+              <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#musicians">Musicians</a></li>
+              <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#pictures">Pictures</a></li>
+              <li class="nav-item breadcrumb-item active d-flex align-items-center" aria-current="page">
+                  <a class="nav-link px-3" href="#albumdetails">Album details</a></li>            
+          </ul>
+        </nav>
+
+<!--         <ul class="navbar-nav py-2 mr-auto">
+          <li class="nav-item active"><a class="nav-link text-white" href="#favorites">Favorites</a></li>
+          <li class="nav-item"><a class="nav-link  text-white" href="#reviews">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#worst">Worst</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#musicians">Musicians</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#pictures">Pictures</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#albumdetails">Album details</a></li>
+        </ul> -->
+
+        <form class="form-inline my-2 my-lg-0">
+          <div class="pr-1">
+          <input class="form-control rounded-pill mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          </div>
+          <button class="btn btn-info text-body rounded-pill my-2 my-sm-0" type="submit">Search</button>
+        </form>            
+      </div>
+
+    </div>
+  </nav>  
+
+    
+
+            <!-- JUMBOTRON  -->
+
+    <!-- EXERCISE 2
+        Create a Jumbotron section with a quick explanation / image of the website
+    -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container ">
+        <h1 class="display-4 text-center">My Albums Website</h1>
+        <p class="lead text-center">Browse your Favorite Albums, Pictures and Reviews.</p>
+       <div class="text-center"><a class="btn btn-sm btn-outline-light btn-lg " href="#" role="button">Learn more</a> </div> 
+      </div>
+    </div>
+
+    <main>
+                <!-- FAVORITES  -->
+
+    <!-- EXERCISE 3
+        Foreach album in the favorite list, place the genre inside a badge
+    -->
+    <!-- EXERCISE 4
+        Foreach album in the favorite list, use the Bootstrap Card to contain it.
+        Use card layouts to format it in the best way possible.
+    -->
+    <!-- EXERCISE 13
+        Add a Album Carousel with controls to display the top 10 albums
+    -->
+
+    <section id="favorites" class="container py-3">
+                   
+      <h5 class="text-light ">FAVORITE ALBUMS</h5>
+
+      <div>
+              <div id="carouselExampleControls" class="carousel slide py-3 " data-ride="carousel">
+                <a class="carousel-control-next pb-5 pl-5" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <div class="carousel-inner">
+                  
+                      <div class="carousel-item active">
+                        <div class="row">
+
+                        <div class="col-sm-4 col-md-3 col-lg-2 mr-4">
+                        <img src="images/alb1.png" class="d-block img-style" alt="..." >
+                          <h6 class="song-title mb-1 mt-3">A Private Break</h6>
+                          <span class="badge badge-warning">Pop</span>                         
+                          <p class="song-author">Flowersting</p>                          
+                      </div>
+
+                      <div class="col-sm-4 col-md-3 col-lg-2 mr-4 d-none d-sm-block">
+                        <img src="images/alb2.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">A Private Break</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Flowersting</p>
+                      </div>
+
+                      <div class="col-md-3 col-lg-2 mr-4 d-none d-md-block">
+                        <img src="images/alb3.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">A Private Break</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Flowersting</p>
+                      </div>
+
+                      <div class="col-lg-2 mr-4 d-none d-lg-block">
+                        <img src="images/alb4.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">A Private Break</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Flowersting</p>
+                      </div>
+
+                      <div class="col-lg-2 mr-4 d-none d-lg-block">
+                        <img src="images/alb5.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">A Private Break</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Flowersting</p>
+                      </div> 
+
+                      </div>   
+                    </div>
+
+
+                    <div class="carousel-item ">
+                      <div class="row">
+
+                   
+
+                        <div class="col-sm-4 col-md-3 col-lg-2 mr-4">
+                          <img src="images/alb6.png" class="d-block img-style" alt="..." >
+                          <h6 class="song-title mb-1 mt-3">Signs</h6>
+                          <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Phoenix Silence</p>
+                    </div>
+
+                    <div class="col-sm-4 col-md-3 col-lg-2 mr-4 d-none d-sm-block">
+                      <img src="images/alb7.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">Brightness</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Orange Photography</p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 mr-4 d-none d-md-block">
+                      <img src="images/alb8.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">Relaxed Prison</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Psychological quality</p>
+                    </div>
+
+                    <div class="col-lg-2 mr-4 d-none d-lg-block">
+                      <img src="images/alb9.png" class="d-block img-style" alt="..." >
+                        <h6 class="song-title mb-1 mt-3">Minds of Healing</h6>
+                        <span class="badge badge-warning">Pop</span>
+                        <p class="song-author">Lucky Lions</p>
+                    </div>
+
+                    <div class="col-lg-2 mr-4 d-none d-lg-block">
+                      <img src="images/alb10.png" class="d-block img-style" alt="..." >
+                      <h6 class="song-title mb-1 mt-3">Minds of Healing</h6>
+                      <span class="badge badge-warning">Pop</span>
+                      <p class="song-author">Lucky Lions</p>
+                    </div>
+
+                   
+
+                    </div>   
+                  </div>
+
+                  </div>   
+              </div>   
+            </div>    
+    </section>
+
+
+                <!-- ALBUM REVIEW  -->
+
+
+    <section id="reviews" class="container py-3"> 
+              
+      <h5 class="text-light ">ALBUM review</h5>
+          <div class="row ">
+            <div class="col-sm-1 text-center d-flex flex-column">
+              
+              </div>
+              <div class="col-sm-2 text-center d-flex flex-column justify-content-center">
+             
+              <img src="images/alb11.png" alt="" width="100px">
+             
+            </div>
+            <div class="col-sm-2 text-light d-flex flex-column justify-content-center">  
+              Lucky Lions <br>
+              Minds Of Healing      <br><br> 
+              <p class="albuminfo" >       
+              <em>Duration:</em> 45:00<br>
+             <em> Genre:</em> Pop 
+            </p>  
+            </div>
+           
+              <div class="col-sm-4 text-light pl-2 ml-2 mt-0 pt-0 d-flex flex-column justify-content-center">
+                 <p>
+                  TRACK list: </p>
+                  <p class="tracklistfont">                    
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+              </div>
+          </div>
+        
+      </section>
+
+                <!-- WORST  -->
+
+
+      <section id="worst" class="container py-3"> 
+            
+        <h5 class="text-light ">WORST ALBUM LIST</h5>
+          <div class="row pl-3 py-3 ">
+            
+            <div class="col-sm-4 col-md-3 col-lg-2">
+              
+              <div class="card text-light bg-transparent" >
+                <img class="card-img-top" src="/images/alb12.png" alt="" width="100px">
+                  <div class="card-body pt-1">
+                    <p class="worsttitles" >The Orchestra</p>                      
+                  </div>
+              </div>   
+
+           </div>
+           <div class="col-sm-4 col-md-3 col-lg-2 d-none d-sm-block">
+              
+              <div class="card text-light bg-transparent ">
+                  <img class="card-img-top" src="/images/alb13.png" alt="" width="100px">
+                    <div class="card-body pt-1">
+                      <p class="worsttitles" >The Orchestra</p>                       
+                     
+                    </div>
+                </div>      
+            </div>
+            <div class="col-md-3 col-lg-2 d-none d-md-block">
+              
+              <div class="card text-light bg-transparent">
+                <img class="card-img-top" src="/images/alb14.png" alt="" width="100px">
+                  <div class="card-body pt-1">
+                    <p  class="worsttitles" >The Orchestra</p>                    
+                  </div>
+              </div>  
+              </div>   
+                      
+          </div>
+        </section>
+
+
+                <!-- TRACK LIST  -->         
+
+    <!-- EXERCISE 5
+        Place the tracklist inside a Bootstrap table.
+        The row colors must be alternated.
+        Use a column for the track order number, one for the title and one for the track duration.
+        (If you want, you can also add extra columns)
+    -->
+    
+    <!-- EXERCISE 6
+        Add a DELETE bootstrap button on each row of the tracklist, with appropriate transitions 
+        on the various pseudo-class states 
+        which you should also do for all the subsequent buttons you'll create.   -->
+
+    <!-- EXERCISE 9
+        Add a button "Add Track" under the track list of the album. 
+        Add also a nice shadow transition when the button is hovered (with the box-shadow property)
+    -->
+
+    <!-- EXERCISE 10
+        On "Add Track" button, open a new modal.
+        The modal shall contain a form with:
+        - Track number
+        - Track name
+        - Track length
+        - Track featuring
+        - Live Track (checkbox)
+        The fields should be inside an Input Group and divided in 2 columns.
+    -->
+     <!-- EXERCISE 16
+        Considering the button you've created in ex. 6:
+
+        Add the functionality that will make the row disappear when you click on its delete button. 
+        Add a fade-out effect to it before it gets removed, using a CSS transition effect
+    -->
+    <div class="container">
+        <h5 class="text-light">TRACKLIST</h5>
+
+        <div class="row">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+                <table class="table table-sm table-dark mb-0">
+                    <thead>
+                      <tr>
+                        <th scope="col">Order no.</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Track duration</th>                                          
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bg-danger">
+                        <th scope="row">1</th>
+                        <td>A Private Break</td>
+                        <td class="d-flex align-items-center">3:00<button type="button" class="btn btn-sm btn-outline-light delete-button ml-2 px-1 py-0" onclick="removeRow(event)">DELETE</button></td>                       
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>A Private Break</td>
+                        <td class="d-flex align-items-center">2:30<button type="button" class="btn btn-sm btn-outline-light delete-button ml-2 px-1 py-0" onclick="removeRow(event)">DELETE</button></td>                       
+                      </tr>
+                      <tr class="bg-danger">
+                        <th scope="row">3</th>
+                        <td>A Private Break</td>
+                        <td class="d-flex align-items-center">2:00<button type="button" class="btn btn-sm btn-outline-light delete-button ml-2 px-1 py-0" onclick="removeRow(event)">DELETE</button></td>                       
+                      </tr>
+                    </tbody>
+                  </table>
+                  <button id="btnTrack" type="button" class="btn btn-sm btn-danger mt-3 px-1 py-0"
+                  data-toggle="modal" data-target="#exampleModal1">Add a track</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+                  <!-- EXERCISE 11
+        All the field (except for Feat. and Live Track) are required fields and requires validation.
+        If the user clicks on the Add button and some fields are empty, a warning alert must be shown
+                  -->
+                      <!-- EXERCISE 15
+        Add 2 bootstrap buttons at the bottom of the modal window you've created in ex. 10:
+        - Close => clear the fields and close the modal
+        - Add => Add the track to the list of tracks in the main page and display an alert success message 
+        - The new list-element added to the list will appear with a fade-in transition effect
+        https://getbootstrap.com/docs/4.6/components/alerts/
+        [EXTRA] Make the message disappear after 5 seconds
+        https://www.w3schools.com/jsref/met_win_settimeout.asp
+    -->
+                  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModal1Label">Add a track</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+
+
+                          <form class="needs-validation" novalidate>
+                            <div class="form-row">
+                              <div class="col">
+
+                                <input id="validationCustom01" class="form-control form-control-sm my-1" type="text" placeholder="Track number" value="" required>
+                                  <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                  <div class="invalid-feedback">
+                                      Please provide a track number.
+                                  </div>
+
+                                <input id="validationCustom02" class="form-control form-control-sm my-1" type="text" placeholder="Track name" value="" required>
+                                  <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                  <div class="invalid-feedback">
+                                      Please provide a track name.
+                                    </div>
+
+                              </div>
+                              <div class="col">
+
+                                <input id="validationCustom03" class="form-control form-control-sm my-1" type="text" placeholder="Track length" value="" required>
+                                <div class="valid-feedback">
+                                  Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                  Please provide a track length.
+                                </div>
+
+                                <input class="form-control form-control-sm my-1" type="text" placeholder="Track featuring">
+
+                                <div class="form-check">
+                                  <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                                  <label class="form-check-label" for="dropdownCheck">
+                                    Live track
+                                  </label>
+                                </div>
+                                <button id="addtrackbtn" type="button" class="btn btn-sm btn-light" onclick="addTrack()" data-dismiss="modal">Add</button>
+                                <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </form>
+                       
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+
+                    <div class="alert alert-success alert-message d-none" role="alert" onanimationend="set3sTimeOut(this)">
+                      A simple success alert—check it out!
+                    </div>
+
+
+                <!-- MUSICIAN I ADMIRE & ALBUM DETAILS AREA  -->    
+
+<!--     <section id="musicians" class="container py-3">        
+      <h5 class="text-light pr-5 ">MUSICIAN I ADMIRE</h5>
+      <div class="row py-3 ">       
+        <br>      
+        <div class="col"><img src="images/alb15.png" alt="" width="150px"></div>        
+      </div>
+    </section> -->
+
+    <section id="albumdetails" class="container py-3">
+           
+      <h5 class="text-light ">Album details area</h5>
+      <div class="row py-3 ">           
+        <br>            
+        <div class="col-sm-2">
+          <img id="albumdetailsImage" src="images/alb15.png" alt="" width="150px" 
+          onclick="toggleDnone()"></div>
+        <div id="albumdetailsText" class="col-sm-3 d-none" ><br><p class="text-white" ><strong>The Past Shrines: Heavy Ice
+        </strong>designed to help you feel better at every time of the day</p></div>              
+      </div>
+  </section>
+
+                <!-- TAPESTRY  -->    
+
+    <section id="pictures" class="container py-3">
+          
+      <h5 class="text-light ">ALBUM PICTURES</h5>
+
+        <div class="container py-3 ">
+          <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6">
+            
+            
+            <div class="col p-1 mb-2">
+              <img src="images/alb16.png" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+              <img src="images/alb17.png" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+              <img src="images/alb18.png" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+            <img src="images/alb19.png" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+            <img src="images/alb20.png" alt="" width="150px">
+            </div>
+            <div class="col py-1 mb-2 ">
+            <img src="images/alb21.png" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+            <img src="images/album1.jpg" alt="" width="150px">
+            </div>
+             <div class="col p-1 mb-2">
+              <img src="images/album2.jpg" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+              <img src="images/album3.jpg" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+              <img src="images/album4.jpg" alt="" width="150px">
+            </div>
+            <div class="col p-1 mb-2">
+              <img src="images/album5.jpg" alt="" width="150px">
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+
+                <!-- FOOTER  -->         
+
+    <!-- EXERCISE 7 MODAL
+        Add a "Contact Me" form in the footer.
+        The "Contact Me" form has 2 fields:
+        - Email
+        - Text of the message
+        Use the correct Bootstrap styles for styling the buttons
+    -->
+        <!-- EXERCISE 8 
+        Add to the footer an extra column with the same links of the top nav.
+    -->
+
+        
+    <footer>
+      <div class="container">
+      <h5 class="text-light ">Contact us</h5>
+      <div class="pb-3 ">
+          <a class="d-inline m-1 p-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+          </svg>
+        </a>
+          <a class="d-inline m-1 p-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+          </svg></a>
+          <a class="d-inline m-1 p-1"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+          </svg></a>
+          <button id="btnContact" type="button" class="btn btn-dark text-white bg-transparent ml-3" data-toggle="modal" data-target="#exampleModal">
+            CONTACT FORM
+    <!--           <span id="numberOfAlbums" class="badge badge-light"></span>   -->            
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Leave us your feedback</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+
+                  <form action="" class="needs-validation" novalidate>
+                    <input type="email" class="form-control mb-2" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your Email" required>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide valid email.
+                    </div>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Your Message" required></textarea>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter your feedback.
+                    </div>
+                    <button type="submit" class="btn btn-sm btn-light mt-2" >Submit</button>
+                  </form>
+                  
+                </div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+
+
+    <!--       <div class="pl-4 d-inline">
+            <button type="button" class="btn btn-dark text-white bg-transparent" >
+              Number of Albums: <span id="numberOfAlbums" class="badge badge-light"></span>              
+            </button>
+
+          </div> -->
+
+          <div class="pl-4 d-flex align-items-center justify-content-around">
+            <nav aria-label="breadcrumb ">
+              <ul class="navbar-nav mr-auto breadcrumb pb-0 mt-1 d-flex flex-row">            
+                <li class="nav-item breadcrumb-item d-flex align-items-center "><a class="nav-link" href="#favorites">Favorites</a></li>
+                <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#reviews">Reviews</a></li>
+                <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#worst">Worst</a></li>
+                <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#musicians">Musicians</a></li>
+                <li class="nav-item breadcrumb-item d-flex align-items-center"><a class="nav-link" href="#pictures">Pictures</a></li>
+                <li class="nav-item breadcrumb-item d-flex align-items-center" aria-current="page">
+                    <a class="nav-link px-2" href="#albumdetails">Album details</a></li>            
+              </ul>
+            </nav>        
+          </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+                    <script>
+                      // Example starter JavaScript for disabling form submissions if there are invalid fields
+                      (function() {
+                          'use strict';
+                          window.addEventListener('load', function() {
+                            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                            var forms = document.getElementsByClassName('needs-validation');
+                            // Loop over them and prevent submission
+                            var validation = Array.prototype.filter.call(forms, function(form) {
+                              form.addEventListener('submit', function(event) {
+                                if (form.checkValidity() === false) {
+                                  event.preventDefault();
+                                  event.stopPropagation();
+                                }
+                                form.classList.add('was-validated');
+                              }, false);
+                            });
+                          }, false);
+                        })();
+                    </script>
+
+    <!-- ############### -->
+    <!-- ###  EXTRA  ### -->
+    <!-- ############### -->
+
+    <!-- EXERCISE 12 
+
+        Create a splash screen to introduce your application nicely: 
+        A colored backdrop that will cover the page entirely and a logo or a loader/spinner in the middle 
+        with a fade-in/fade-out that will last 2 seconds
+
+        (it's usually being used while the page content is loading, but let's just use some tecnique we've seen to 
+        create an animation that displays it for 2 seconds and then it'll disappear) 
+    -->
+
+    
+    <div id="overlay">
+      <div id="text" class="spinner-border text-info" role="status">
+      <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+
+
+
+  </main>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+
+    
+
+  </body>
+</html>
